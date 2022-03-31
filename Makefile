@@ -3,6 +3,10 @@ run: # build images and run all command in containers.
 	docker-compose up -d --build
 	docker-compose exec python3 bash
 
+run-local:
+	@echo "\033[35mBoot Docker Container On Local System.\033[m" 
+	docker-compose up 
+
 down: # stop and remove containers.
 	@echo "\033[31mShut Down Docker Container.\033[m" 
 	docker-compose down
