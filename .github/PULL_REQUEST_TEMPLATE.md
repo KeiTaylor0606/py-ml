@@ -1,6 +1,6 @@
 # Pull Request
-## Overview :mag:
-fixed #< issue number >
+## Overview
+fix #< issue number >
 
 ## Details of implementation/changes :speech_balloon:
 
