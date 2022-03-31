@@ -1,6 +1,6 @@
 # Pull Request
 ## Overview
-fixed #< issue number >
+fix #< issue number >
 
 ## Details of implementation/changes
 
