@@ -1,17 +1,19 @@
 name: GitHub Actions
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  run:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v2
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
+      - name: Update
         run: |
-          ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+          sudo apt-get update
+          sudo apt-get -y install locales
+          sudo localedef -f UTF-8 -i ja_JP ja_JP.UTF-8
+      - name: Install Vim
+        run: |
+          sudo apt-get install -y vim less
+      - name: Setup Python
+        run: |
+          sudo pip install --upgrade pip
+          sudo pip install --upgrade setuptools
+          sudo python -m pip install jupyterlab
